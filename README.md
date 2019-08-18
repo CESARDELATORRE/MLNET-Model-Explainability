@@ -2,7 +2,7 @@
 
 | ML.NET version | API type          | Status                        | App Type    | Data type | Scenario            | ML Task                   | Algorithms                  |
 |----------------|-------------------|-------------------------------|-------------|-----------|---------------------|---------------------------|-----------------------------|
-| v1.0.0           | Dynamic API | Up-to-date | Console app | .csv files | Price prediction | Regression | Sdca Regression |
+| v1.3.1           | Dynamic API | Up-to-date | Console app | .csv files | Price prediction | Regression | Sdca Regression |
 
 In this introductory sample, you'll see how to use [ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet) to predict taxi fares. In the world of machine learning, this type of prediction is known as **regression**.
 
@@ -29,8 +29,6 @@ The common feature for all those examples is that the parameter we want to predi
 
 ## Solution
 To solve this problem, first we will build an ML model. Then we will train the model on existing data, evaluate how good it is, and lastly we'll consume the model to predict taxi fares.
-
-![Build -> Train -> Evaluate -> Consume](../shared_content/modelpipeline.png)
 
 ### 1. Build model's pipeline
 
@@ -129,3 +127,7 @@ Finally, you can plot in a chart how the tested predictions are distributed and 
 
 ![Regression plot-chart](images/Sample-Regression-Chart.png)
 
+### 5. Model Explainability
+In some cases we would want to see what features the model deems important when it finds a pattern in the data. ML.NET's model explainability will help us do that. This sample shows how to use model explainability to get a better idea of how important each feature is for each row of data when making predictions. 
+
+The `mlContext.Transforms.CalculateFeatureContribution(trainedModel.LastTransformer)` method calculates scores for each feature row within the input.
