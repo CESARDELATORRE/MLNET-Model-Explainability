@@ -16,4 +16,10 @@
     <Folder Include="outputs\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="outputs\TaxiFareModel.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
